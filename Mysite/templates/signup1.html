@@ -155,7 +155,7 @@ body{
 }
 .submit{
 	color: white;  
-	background: #df5334;
+	background: black;
 	width: 200px;
 	height: 30px;
 	margin: 10px;
@@ -163,6 +163,9 @@ body{
 	border-radius: 5px;
 	border: 0px;
   }
+h4{
+	color: black;
+}
 </style>
 
     <script src="js/prefixfree.min.js"></script>
@@ -173,24 +176,22 @@ body{
   <div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
-			<div>用戶登入</div>
-            <p class="login__subtitle">Welcome back.</p>
+			<div>用戶註冊</div>
+            <p class="login__subtitle">Sign Up!</p>
 		</div>
 		<br>
-		<form action = 'login' method ='post'>
+		<form action = '../regProcess/' method ='post'>
 		{% csrf_token %}	
 		<div class="login">
+				<label>帳號</label>
 				<input type="text" placeholder="username" name="user"><br>
-				<input type="password" placeholder="password" name="password"><br>
-				<br>
+				<label>密碼</label>
+				<input type="password" placeholder="password" name="password"><br><br>
+				<label>名稱</label>
+				<input type="text" placeholder="name" name="name"><br>
+				<label>email</label>
+				<input type="text" placeholder="email" name="email"><br>
 				<input type="submit" value="進入系統">
-				{% comment %} <input type="submit" value="點此註冊"> {% endcomment %}
-				<div>
-				Don’t have an account? <a href="../reg/regProcess/">Join now!</a>
-		        </div>
-				<div>
-				forgot you password? <a href="../forgotPassword/">check here!</a>
-				</div>
 				<br>
 				<font color="#FF0000" style="font-size:medium;">提示：{{msg}}</font>
 		</div>

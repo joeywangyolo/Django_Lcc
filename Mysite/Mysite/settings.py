@@ -47,17 +47,17 @@ INSTALLED_APPS = [
 
 EMAIL_HOST = "smtp.gmail.com"
 
-EMAIL_HOST_USER = "fcaibi"
+EMAIL_HOST_USER = "joeywang45@gmail.com"
 
-EMAIL_HOST_PASSWORD = ""
+EMAIL_HOST_PASSWORD = "ileqmiqapabwukqu"
 
 EMAIL_PORT = "465"
 
 EMAIL_USE_SSL = "True"
 
-ADMINS = (('Wang', 'k0928694959@gmail.com'),)
+ADMINS = (('Wang', 'joeywang45@gmail.com'),)
 
-MANAGERS = (('Wang', 'k0928694959@gmail.com'),)
+MANAGERS = (('Wang', 'joeywang45@gmail.com'),)
  
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -97,6 +97,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    'OPTIONS':{
+        'timeout':15,
+    }
     }
 }
 

@@ -151,11 +151,10 @@ body{
 
 .login__subtitle{
 	color: black;
-	font-size: 16px;
 }
 .submit{
 	color: white;  
-	background: #df5334;
+	background: black;
 	width: 200px;
 	height: 30px;
 	margin: 10px;
@@ -173,22 +172,19 @@ body{
   <div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
-			<div>用戶註冊</div>
+			<h1>用戶註冊</h1><br>
             <p class="login__subtitle">Welcome back.</p>
-		</div>
-		<br>
-		<form action = '../regProcess/'  method = 'post'>
-		<div class="regProcess">
+			<form action = '../regProcess/'  method = 'post'>		
 				{% csrf_token %}
 				<input type="text" placeholder="username" name="user"><br>
 				<input type="password" placeholder="password" name="password"><br>
+				<br>
 				<input type="text" placeholder="name" name="name"><br>
 				<input type="password" placeholder="email" name="email"><br>
 				<input type="submit" value="確定" class="submit">
-				<input type="submit" value="重新輸入" class="submit">
-				<input type="submit" value="離開" class="submit">
+
 			</form>
-	</div>
+		</div>
 		
 		
   <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>

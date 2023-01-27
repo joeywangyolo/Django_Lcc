@@ -24,6 +24,7 @@ urlpatterns = [
         url(r'^loginPage/',views.loginPage, name='login'),
         url(r'^reg/',views.register, name='register'),
         url(r'^regProcess/',views.regProcess, name='regProcess'),
-        # url(r'^sendHttpEmail/(?P<emailto>[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4})/', views.sendHttpEmail,
-        # name='sendHttpEmail'),
+        url(r'^forgotPassword/',views.forgotPassword, name='forgotPassword'),
+        url(r'^logout/', views.logout, name='logout'),
+
 ]
