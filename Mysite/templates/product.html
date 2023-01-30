@@ -1,0 +1,28 @@
+{% extends "BasePage.html" %}
+
+{% block pageTitle %}
+LCCNET Fashion Product
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/goods.css" type="text/css"/>
+{% endblock %}
+
+{% block mainContent %}
+	<div class='goodsArea'>
+		{% for row in allGoods %}
+			<div class='info'>
+				<a href='#'>
+					<img src='{{row.photo_url}}'>
+				</a>
+				<p>{{row.name}}</p>
+				<span>NT:{{row.price}}</span>\
+				<a href = "{% url 'addtocartadd' row.id %}">購買</a>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div stype="clear:both">
+	</div>
+
+{% endblock %}

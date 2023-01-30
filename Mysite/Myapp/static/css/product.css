@@ -1,0 +1,14 @@
+.info{
+	float:left;
+	width:25%;
+	margin:1%;
+	height:450px;
+	border:1px solid #ccc;
+	margin-left:5.5%;
+	border-radius:15px;
+}
+
+.info img{
+	width: 100%;
+	border-radius:15px;
+}

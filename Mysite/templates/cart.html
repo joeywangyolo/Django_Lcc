@@ -1,0 +1,88 @@
+{% extends "BasePage.html" %}
+
+{% block pageTitle %}
+LCCNET CART
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="/static/css/cart.css" />
+{% endblock %}
+
+{% block mainContent %}
+
+
+<script>
+	
+	function confirmLink(message){
+		document.returnValue = confirm(message);
+	}
+
+
+</script>
+
+
+
+
+<div style="margin-top:50px;"></div>
+
+<div id="maindiv">
+
+		<form action="{% url 'addtocartupdate' %}" method="post" name="form1" id="form1">
+				{% csrf_token %}
+
+				<table width="90%" border="0" align="center" cellpadding="4" cellspacing="0">
+					<tr>
+						<th width="60" align="center"><strong>取消</strong></th>
+						<th align="left"><strong>商品名稱</strong></th>
+						<th width="80" align="center"><strong>單價</strong></th>
+						<th width="80" align="center"><strong>數量</strong></th>
+						<th width="100" align="center"><strong>金額</strong></th>
+					</tr>
+
+			{% for unit in allcart %}
+			
+				<tr>
+					<!-- <td bgcolor="#0f0"><a href="/addtocart/remove/{{forloop.counter0}}" class="delcart" onClick="confirmLink('確定刪除此商品嗎？'); return document.returnValue">刪除</a></td> -->
+					<td bgcolor="#0f0"><a href="{% url 'addtocartremove' forloop.counter0 %}" class="delcart" onClick="confirmLink('確定刪除此商品嗎？'); return document.returnValue">刪除</a></td>
+					<!-- unit.0 => 商品名稱 -->
+					<td align="left">{{ unit.0 }}</td>
+					<!-- unit.1 => 價格 -->
+					<td width="80" align="center">${{ unit.1 }}</td>
+
+					<td width="80" align="center"><input type="text" name='qty{{ forloop.counter0 }}' id="qty{{ forloop.counter0 }}" value="{{  unit.2}}" size="2" /></td>
+
+					<td width="100" align="center"><strong>$ {{ unit.3 }}</strong></td>
+				</tr>
+
+			{% endfor %}	
+
+			<tr>
+				<td colspan="4" align="left" bgcolor="#ffffff" class="upline"><strong>小計</strong></td>
+				<td align="center" bgcolor="#ffffff" class="upline">$ {{total}} </td>
+			</tr>				
+
+			<tr>
+				<td colspan="4" align="left" bgcolor="#ffffff" class="upline"><strong>運費</strong></td>
+				<td align="center" bgcolor="#ffffff" class="upline">$ 100 </td>
+			</tr>				
+			<tr>
+				<td colspan="4" align="left" bgcolor="#ffffff" class="upline"><strong>總計</strong></td>
+				<td align="center" bgcolor="#ffffff" class="upline"><strong><font color="#ff0000">$ {{grandtotal}}</font></strong></td>
+			</tr>				
+					
+				</table>
+
+
+				<table border="0" align="center" cellpadding="10" cellspacing="0">
+					
+					<tr>
+						<td><input type="button" name="Continue" value="繼續購物" onClick="window.location='../collections/'" /></td>
+						<td><input type="submit" name="Submit" value="更新購物車" /></td>
+						<td><input type="button" name="Empty" onClick="window.location='{% url 'addtocartempty' %}' " value="清空購物車" /></td>
+						<td><input type="button" name="Order" onClick="window.location='../cartorder/'" value="我要結帳" /></td>
+					</tr>
+
+				</table>
+		</form>
+</div>
+{% endblock %}

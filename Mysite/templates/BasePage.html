@@ -1,0 +1,77 @@
+<html>
+<head>
+	{% load static %}
+	<meta charset="UTF-8">
+	<title>		
+		{% block pageTitle %}
+		{% endblock %}
+	</title>
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+	{% block css %}
+	{% endblock %}
+
+	{% block js %}
+	{% endblock %}
+</head>
+<body>
+	<div class="header">
+		<div>
+			<!-- <a href="index.html" id="logo"><img src={% static "images/logo.png" %} alt="logo"></a> -->
+			<a href="{% url 'index' %}" id="logo"><img src="/static/images/logo.png" alt="logo"></a>
+			<ul>
+				<li class="selected">
+					<a href="{% url 'index' %}">首頁</a>
+				</li>
+				<li>
+					<a href="{% url 'about' %}">關於我們</a>
+				</li>
+				<li>
+					<a href="{% url 'collections' %}">服裝</a>
+				</li>
+				<li>
+					<a href="/blog">部落格</a>
+				</li>
+				<li>
+					<a href="/locator">門市資訊</a>
+				</li>
+				<a href = "{% url 'reg' %}" style = "color:#c0bfbf;font-family: 'forumregular';font-size:12px;letter-spacing:2px;text-decoration:none;text-transform:uppercase;position:absolute;left:840px;" >註冊</a>
+				<a href = "{% url 'login' %}" style = "color:#c0bfbf;font-family: 'forumregular';font-size:12px;letter-spacing:2px;text-decoration:none;text-transform:uppercase;position:absolute;left:880px;" >登入</a>
+			</ul>
+		</div>
+		{% block headContent %}
+		{% endblock %}
+		<!--
+		<div class="featured">
+			<img src="/static/images/bg-absolute.png" alt="">
+			<div>
+				<h3>LCCNET <br> Fashion Collection</h3>
+				<a href="collections.html">2023 LCCNET Collection</a>
+			</div>
+		</div>
+	    -->
+	</div>
+	<div class="body">
+		{% block mainContent %}
+		{% endblock %}
+	</div>
+
+	<div class="footer">
+		<div>
+			<p>
+				&#169; 2023 ALEN DESGIN. ALL RIGHTS RESERVED.
+			</p>
+			<ul>
+				<li>
+					<a href="#">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="#">Terms And Conditons</a>
+				</li>
+			</ul>
+			<div class="connect">
+				<a href="https://twitter.com/?lang=zh-Hant" id="twitter">Twitter</a> <a href="https://www.facebook.com/" id="facebook">Facebook</a> <a href="https://www.instagram.com/" id="instagram">Instagram</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

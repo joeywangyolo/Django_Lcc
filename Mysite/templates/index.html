@@ -1,0 +1,40 @@
+{% extends "BasePage.html" %}
+
+{% block pageTitle %}
+LCCNET Fashion Plus
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+{% endblock %}
+
+{% block headContent %}
+	<div class="featured">
+		<img src="/static/images/bg-absolute.png" alt="">
+		<div>
+			<h3>LCCNET <br> Fashion Collection</h3>
+			<a href="{% url 'collections' %}">2023 LCCNET Collection</a>
+		</div>
+	</div>
+{% endblock %}
+
+{% block mainContent %}
+		<div>
+			<h2>Welcome to the 2023 Spring collection from Saverio Salermo</h2>
+			<ul>
+				<li>
+					<a href="{% url 'collections' %}"><img src="/static/images/figure2.jpg" alt=""></a> <a href="{% url 'collections' %}">Spring Collection</a>
+				</li>
+				<li>
+					<a href="{% url 'collections' %}"><img src="/static/images/figure3.jpg" alt=""></a> <a href="{% url 'collections' %}">Summer Collection</a>
+				</li>
+				<li>
+					<a href="{% url 'collections' %}"><img src="/static/images/figure4.jpg" alt=""></a> <a href="{% url 'collections' %}">The Artist</a>
+				</li>
+				<li>
+					<a href="{% url 'collections' %}"><img src="/static/images/figure5.jpg" alt=""></a> <a href="{% url 'collections' %}">The Salermo Blog</a>
+				</li>
+			</ul>
+		</div>
+
+{% endblock %}

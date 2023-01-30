@@ -1,0 +1,13 @@
+/* Website template by freewebsitetemplates.com */
+/*------------------------- Body ------------------------*/
+.header div ul li:hover ul {
+	left:-15px;
+	top:20px;
+}
+.body .collections div ul li {
+	width:285px;
+}
+/*------------------------- Footer ------------------------*/
+.footer div p {
+	padding: 12px 0;
+}

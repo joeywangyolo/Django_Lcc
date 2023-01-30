@@ -1,0 +1,23 @@
+{% extends "BasePage.html" %}
+
+{% block pageTitle %}
+LCCNET 購物車內容
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="/static/css/cart.css" />
+{% endblock %}
+
+{% block mainContent %}
+
+	<div style="margin-top:50px;"></div>
+
+	<div id="maindiv">
+		<p class="title">訂購完成資訊</p>
+		<p class="subject">非常感謝您的購買，我們會盡快處理您的訂單</p>
+		<p class="desc">親愛的<strong>{{name}}</strong>(先生/小姐), 訂單已完成</p>
+		<!-- <p class="desc"><a href="/cartordercheck/?orderid={{orderid}}&customemail={{email}}">訂單詳細內容</a></p> -->
+		<p class="desc"><a href="{% url 'cartordercheck' %}">訂單詳細內容</a></p>
+	</div>
+
+{% endblock %}
